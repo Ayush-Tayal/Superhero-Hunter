@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+
+#heading{
+    font-family:'Dancing Script';
+    font-size: 2rem;  
+    padding-top:0px;  
+    margin-left: 2rem;
+}
+
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(17, 1, 32);
+    color: white;
+    font-size: 1.8rem;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.superhero-icon{
+    height: 45px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 4rem;
+}
+
+#left-navbar{
+    display: flex;
+    align-items: center;
+}
+
+#right-navbar{
+    margin-right: 5rem;
+}
+
+.home{
+    margin-right: 2rem;
+}

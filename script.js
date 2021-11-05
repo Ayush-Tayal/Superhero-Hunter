@@ -12,29 +12,25 @@ async function supereherofunc(){
     const superheroArray = data.results;
     console.log(superheroArray);
     
-    // inputVal.length > 0 ?
-    // superheroArray.forEach((superhero, idx)=>{  
-    //     seachResult.innerHTML += `<li> ${superhero.name}</li>
-    //                         <img src="${superhero.image}" </img> `
-                                    
-    // }):`${seachResult.innerHTML = ""}`
-    seachResult.innerHTML = " "
-    inputVal.length > 0 ?
-    superheroArray.forEach((superhero)=>{
+    seachResult.innerHTML = " ";
+  
+    data.response === "success" ?
+    superheroArray.map((superhero)=>{
       seachResult.innerHTML += `<ul class="card">
-                                  <img src="${superhero.image.url}" alt="">
-
-                                  <div class="card-details">
-                                    <h1>${superhero.name}</h1>
-                                    <button class="search">Search</button>
-                                    <button class="addToFav">Add to Favourites</button>
-                                  </div>
-                                </ul> `
-
+      <img src="${superhero.image.url}" alt="">
+      
+      <div class="card-details">
+      <h1>${superhero.name}</h1>
+      <button class="search">Search</button>
+      <button class="addToFav">Add to Favourites</button>
+      </div>
+      </ul> `
+      
     }):`${seachResult.innerHTML = " "}`
-    
-}
 
+    
+  }
+  
 function debounced(para, delay) {
     let timer;
 
@@ -45,6 +41,15 @@ function debounced(para, delay) {
       }, delay);
     };
 
-    return debouncedFunction;
-}
+    return debouncedFunction; }
     
+
+seachResult.addEventListener("click", (e)=>{
+  if(e.target.classList.contains("search")){
+    console.log("Searched Clicked");
+  }
+  else if(e.target.classList.contains("addToFav")) {
+    console.log("Add to Fav Clicked");
+  }
+
+})

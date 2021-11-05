@@ -2,6 +2,8 @@
 
 body{
     margin: 0;
+    height: 100vh;
+    overflow: hidden;
 }
 
 a{
@@ -55,9 +57,9 @@ a{
 /* body */
 
 body{
-    background: linear-gradient(rgba(0, 0, 5, 0.9), rgba(0, 0, 5, 0.9)),
+    background: linear-gradient(rgba(0, 0, 5, 0.7), rgba(0, 0, 5, 0.7)),
     url(./images/background.jpg);
-
+/* background-image: url(./images/background.jpg); */
 }
 
 #main{
@@ -66,7 +68,7 @@ body{
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    margin-top: 12%;
+    margin-top: 8%;
     z-index: 10;
 
 }
@@ -75,7 +77,6 @@ body{
     font-size: 3.5rem;
     font-family:'Dancing Script';
     margin-bottom: 3rem;
-
 }
 
 #main input{
@@ -86,4 +87,58 @@ body{
     outline: none;
     width: 40rem;
     
+}
+
+/*  */
+
+.search-result{
+    height: 100vh;
+    overflow: auto;
+}
+
+.card{
+    display: flex;
+    padding-left: 2px;
+    margin-bottom: 0;
+    margin-top: 0;
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid green;
+    border-top: 1px solid green ;
+    padding: 1rem;
+    /* overflow: scroll; */
+}
+
+.card img{
+    height: 100px;
+    width: 80px;
+    object-fit: cover;
+    margin-right: 2rem;
+    border-radius: 5px;
+    
+}
+
+.card-details{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.card-details h1{
+    margin: 0;
+}
+
+.card-details button{
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+}
+
+.card-details .search{
+    background-color: grey;
+}
+
+.card-details .addToFav{
+    background-color: rgb(58, 165, 58);
 }

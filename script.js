@@ -12,11 +12,26 @@ async function supereherofunc(){
     const superheroArray = data.results;
     console.log(superheroArray);
     
-    inputVal.length > 0 ?
-    superheroArray.forEach((superhero, idx)=>{  
-        seachResult.innerHTML += `<li> ${superhero.name}</li>`
+    // inputVal.length > 0 ?
+    // superheroArray.forEach((superhero, idx)=>{  
+    //     seachResult.innerHTML += `<li> ${superhero.name}</li>
+    //                         <img src="${superhero.image}" </img> `
                                     
-    }):`${seachResult.innerHTML = ""}`
+    // }):`${seachResult.innerHTML = ""}`
+    
+    inputVal.length > 0 ?
+    superheroArray.forEach((superhero)=>{
+      seachResult.innerHTML += `<ul class="card">
+                                  <img src="${superhero.image.url}" alt="">
+
+                                  <div class="card-details">
+                                    <h1>${superhero.name}</h1>
+                                    <button class="search">Search</button>
+                                    <button class="addToFav">Add to Favourites</button>
+                                  </div>
+                                </ul> `
+
+    }):`${seachResult.innerHTML = " "}`
     
 }
 

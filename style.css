@@ -133,6 +133,7 @@ body{
     border-radius: 5px;
     color: white;
     padding: 5px;
+    cursor: pointer;
 }
 
 .card-details .search{

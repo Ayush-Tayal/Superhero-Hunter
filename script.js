@@ -18,7 +18,7 @@ async function supereherofunc(){
     //                         <img src="${superhero.image}" </img> `
                                     
     // }):`${seachResult.innerHTML = ""}`
-    
+    seachResult.innerHTML = " "
     inputVal.length > 0 ?
     superheroArray.forEach((superhero)=>{
       seachResult.innerHTML += `<ul class="card">

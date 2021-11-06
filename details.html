@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js" defer></script>
-    
     <title>Details</title>
 </head>
 <body>
@@ -26,6 +24,7 @@
 
         <!-- <img src="./images/logo.png" alt="">
         <div id="fav-btn"><button>Favourite</button></div>
+
         <h1 id="power-stats">Power Stats</h1>
         
         <div id="intelligence">
@@ -41,7 +40,36 @@
 
 
 
-
     </main>
 </body>
+
+<script>
+    const details = document.querySelector("#details");
+    console.log(details);
+
+    const getItems = JSON.parse(localStorage.search);
+    console.log(getItems);
+
+    details.innerHTML += `<img src="${getItems.image.url}" alt="">
+                        <div id="fav-btn"><button>Favourite</button></div>
+
+                        <h1 id="power-stats">Power Stats</h1>
+                        
+                        <div id="intelligence">
+                            <h4>Intelligence</h4>
+                            <h4>${getItems.powerstats.intelligence}</h4>
+                        </div>
+                        
+                        <div id="strength">
+                            <h4>Strength</h4>
+                            <h4>${getItems.powerstats.strength}</h4>
+                        </div> `
+
+</script>
+
+
+
+
+
+
 </html>

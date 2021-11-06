@@ -47,13 +47,15 @@ function debounced(para, delay) {
 
 seachResult.addEventListener("click", (e)=>{
   if(e.target.classList.contains("search")){
-    // location.href = "./details.html"
-    console.log("Searched Clicked");
-    id = e.target.id;
-    // console.log(id);
-    superheroDetails(id);
+    // console.log("Searched Clicked");
 
+    id = e.target.id;
+    console.log(id)
+    // location.href = "./details.html";
+    superheroDetails(id);
+  
   }
+
   else if(e.target.classList.contains("addToFav")) {
     location.href = "./favourites.html"
     console.log("Add to Fav Clicked");
@@ -61,27 +63,12 @@ seachResult.addEventListener("click", (e)=>{
 
 })
 
-// const details = document.querySelector("#details")
-// console.log(details);
-
-const superheroDetails = async ()=>{
+const superheroDetails = async (id)=>{
   const response2 = await fetch(`https://www.superheroapi.com/api.php/3023624931288669/${id}`); 
   const data2 = await response2.json();
   console.log(data2);
-
-  // details.innerHTML += `<img src="${data2.image.url}" alt="">
-  //                       <div id="fav-btn"><button>Favourite</button></div>
-  //                       <h1 id="power-stats">Power Stats</h1>
-                        
-  //                       <div id="intelligence">
-  //                           <h4>Intelligence</h4>
-  //                           <h4>${data2.powerstats.intelligence}</h4>
-  //                       </div>
-                        
-  //                       <div id="strength">
-  //                           <h4>Strength</h4>
-  //                           <h4>${data2.powerstats.strength}</h4>
-  //                       </div> `
-
+  
+  let search = JSON.stringify(data2);
+  localStorage.setItem("search", search);
 
 }

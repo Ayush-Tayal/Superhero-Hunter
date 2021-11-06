@@ -158,8 +158,8 @@ body{
 }
 
 #details img{
-    height: 400px;
-    width: 350px;
+    height: 350px;
+    width: 300px;
     object-fit: cover;
     border-radius: 10px;
     display: flex;
@@ -167,21 +167,23 @@ body{
     margin-right: auto;
 }
 
-#details button{
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
+#details i{
+    text-align: center;
+    font-size: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+
+}
+
+#name{
+    text-align: center;
     font-weight: bold;
-    padding: 5px;
+    border-bottom: 2px solid white;
+    padding-bottom: 1rem;
+    font-size: 2rem;
 }
 
-#fav-btn{
-    text-align: center;
-    text-align: center;
-    margin-top: 1.5rem;
-}
-
-#intelligence, #strength{
+#intelligence, #strength, #power{
     display: flex;
     justify-content: space-between;
     font-weight: bold;

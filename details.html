@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c80876b834.js" crossorigin="anonymous"></script>
     <title>Details</title>
 </head>
 <body>
@@ -23,8 +24,9 @@
     <main id="details">
 
         <!-- <img src="./images/logo.png" alt="">
-        <div id="fav-btn"><button>Favourite</button></div>
+        <i class="far fa-heart"></i>
 
+        <h1 id="name">Superhero Name</h1>
         <h1 id="power-stats">Power Stats</h1>
         
         <div id="intelligence">
@@ -35,8 +37,12 @@
         <div id="strength">
             <h4>Strength</h4>
             <h4>25</h4>
-        </div> -->
+        </div>
 
+        <div id="power">
+            <h4>Power</h4>
+            <h4>100</h4>
+        </div> -->
 
 
 
@@ -45,16 +51,18 @@
 
 <script>
     const details = document.querySelector("#details");
-    console.log(details);
+    // console.log(details);
 
     const getItems = JSON.parse(localStorage.search);
     console.log(getItems);
 
     details.innerHTML += `<img src="${getItems.image.url}" alt="">
-                        <div id="fav-btn"><button>Favourite</button></div>
+                        <i class="far fa-heart"></i>
+                        
+                        <h1 id="name">${getItems.name}</h1>
 
                         <h1 id="power-stats">Power Stats</h1>
-                        
+                       
                         <div id="intelligence">
                             <h4>Intelligence</h4>
                             <h4>${getItems.powerstats.intelligence}</h4>
@@ -63,7 +71,12 @@
                         <div id="strength">
                             <h4>Strength</h4>
                             <h4>${getItems.powerstats.strength}</h4>
-                        </div> `
+                        </div>
+    
+                        <div id="power">
+                            <h4>Power</h4>
+                            <h4>${getItems.powerstats.power}</h4>
+                        </div>`
 
 </script>
 

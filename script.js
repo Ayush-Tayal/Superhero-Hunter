@@ -1,6 +1,7 @@
 const input = document.querySelector("#input");
 const seachResult = document.querySelector(".search-result");
 input.onkeyup = debounced(supereherofunc, 500);
+let favList = [];
 
 async function supereherofunc() {
   let inputVal = input.value;
@@ -8,10 +9,10 @@ async function supereherofunc() {
     `https://www.superheroapi.com/api.php/3023624931288669/search/${inputVal}`
   );
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
 
   const superheroArray = data.results;
-  console.log(superheroArray);
+  // console.log(superheroArray);
 
   seachResult.innerHTML = " ";
 
@@ -23,7 +24,7 @@ async function supereherofunc() {
       <div class="card-details">
       <h1>${superhero.name}</h1>
       <button  id=${superhero.id} class="search">Search</button>
-      <button class="addToFav">Add to Favourites</button>
+      <button id=${superhero.id} class="addToFav">Add to Favourites</button>
       </div>
       </ul> `;
       })
@@ -49,14 +50,16 @@ seachResult.addEventListener("click", (e)=>{
     // console.log("Searched Clicked");
 
     let id = e.target.id;
-    console.log(id)
+    console.log("id from search",id)
     searchDetails(id);
 
   }
 
   else if(e.target.classList.contains("addToFav")) {
-    // location.href = "./favourites.html";
-    console.log("Add to Fav Clicked");
+    // console.log("Add to Fav Clicked");
+    let id = e.target.id;
+    // console.log("id from fav",id);
+    favDetails(id);
   }
 
 })
@@ -69,6 +72,15 @@ const searchDetails = async (id) => {
   let search = JSON.stringify(data);
   localStorage.setItem("search", search);
   window.location.href = "./details.html";
-
 };
 
+const favDetails = async (id)=>{
+  const response = await fetch(`https://www.superheroapi.com/api.php/3023624931288669/${id}`);
+  const data = await response.json();
+  // console.log(data);
+
+  favList.push(data);
+  console.log(favList)
+  let favData = JSON.stringify(favList);
+  localStorage.setItem("favData", favData);
+}

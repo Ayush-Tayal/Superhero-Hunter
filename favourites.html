@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/logo.png">
     <title>Favourites</title>
     <script src="https://kit.fontawesome.com/c80876b834.js" crossorigin="anonymous"></script>
-    <!-- <script src="./script.js" defer></script> -->
 
 </head>
 <body>
     <nav id="navbar">
         <div id="left-navbar">
-            <img src="./images/logo.png" alt="" class="superhero-icon">
+            <img src="./images/logo.png" onclick="location.href= './index.html' " style="cursor: pointer;" alt="" class="superhero-icon">
             <a href="./index.html" id="heading">Superhero Hunter</a>
         </div>
 
@@ -22,5 +22,68 @@
             <a href="./favourites.html" class="favourites">Favourites</a>
         </div>
     </nav>
+
+    <main id="fav-cards">
+        <!-- <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div>
+
+        <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div>
+
+        <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div>
+
+        <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div>
+
+        <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div>
+
+        <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div>
+
+        <div class="fav-card">
+            <img src="./images/logo.png" alt="">
+            <h1>Name</h1>
+            <i class="fas fa-heart"></i> 
+        </div> -->
+    
+        
+    </main>
 </body>
 </html>
+
+<script>
+    const favCards = document.querySelector("#fav-cards");
+    console.log(favCards);
+
+    const getItems = JSON.parse(localStorage.favData);
+    console.log(getItems);
+
+    getItems.map((oneFav)=>{
+        favCards.innerHTML += `<div class="fav-card">
+                                    <img src="${oneFav.image.url}" alt="">
+                                    <h1>${oneFav.name}</h1>
+                                    <i class="fas fa-heart"></i> 
+                                </div>`
+    })
+
+</script>

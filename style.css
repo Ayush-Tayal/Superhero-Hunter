@@ -2,8 +2,8 @@
 
 body{
     margin: 0;
-    height: 100vh;
-    overflow: hidden;
+    /* height: 100vh; */
+    /* overflow: hidden; */
 }
 
 a{
@@ -29,6 +29,8 @@ a{
     padding-bottom: 1rem;
     padding-top: 1rem;
     width: 100%;
+    position: sticky;
+    top: 0;
     box-shadow: 0px 5px 10px 0px rgba(255,255,255,0.75);
     -webkit-box-shadow: 0px 5px 10px 0px rgba(255,255,255,0.75);
     -moz-box-shadow: 0px 5px 10px 0px rgba(255,255,255,0.75);
@@ -189,4 +191,43 @@ body{
     font-weight: bold;
     font-size: 1rem;
     border-bottom: 1px solid white;
+}
+
+/* Fav cards */
+#fav-cards{
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: auto;
+    margin-top: 8%;
+}
+
+
+
+.fav-card{
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-right: 5rem;
+    margin-left: 5rem;
+    margin-bottom: 10%;
+    flex-basis: 20%;
+    /* flex: 0 0 30.33%; */
+    text-align: center;
+    padding: 2rem 0rem;
+    
+}
+
+.fav-card img{
+    height: 350px;
+    box-shadow: 0px 5px 15px 2px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 5px 15px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 5px 15px 2px rgba(0,0,0,1);    
+}
+
+.fav-card h1{
+    font-size: 3rem;
+}
+
+.fav-card i{
+    font-size: 2rem;
 }

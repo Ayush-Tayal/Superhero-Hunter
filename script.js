@@ -50,7 +50,7 @@ seachResult.addEventListener("click", (e)=>{
     // console.log("Searched Clicked");
 
     let id = e.target.id;
-    console.log("id from search",id)
+    console.log("id from search",id);
     searchDetails(id);
 
   }
@@ -83,11 +83,13 @@ const favDetails = async (id)=>{
   let getItems = JSON.parse(localStorage.getItem("favList"));
   // console.log(getItems);
 
-  let flag = true; // data pada hai fav mai
+  let flag = true; // data is present
 
   if(getItems == undefined || getItems.length == 0){
+    alert(`${data.name} added to the Favourite List`);
     favList.push(data);
     localStorage.setItem("favList", JSON.stringify(favList));
+
   }
   else{
     let list = [];
@@ -95,16 +97,16 @@ const favDetails = async (id)=>{
     getItems.map((element)=>{
       if(element.id===data.id){
         flag= false;
+        alert(`${element.name} is already present in the Favourite List`);
       }
     })
-
+    
     if(flag){
-
+      alert(`${data.name} added to the Favourite List`);
       list = [data,...getItems];
-      console.log("92",list); 
+      console.log("list ",list); 
       localStorage.setItem("favList", JSON.stringify(list));
     }
   }
-
-
 }
+

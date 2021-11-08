@@ -73,17 +73,33 @@
 
 <script>
     const favCards = document.querySelector("#fav-cards");
-    console.log(favCards);
+    // console.log(favCards);
 
-    const getItems = JSON.parse(localStorage.favData);
-    console.log(getItems);
+    function getFav(){
+        const getItems = JSON.parse(localStorage.favData);
+        console.log(getItems);
+        favCards.innerHTML = "";
 
-    getItems.map((oneFav)=>{
-        favCards.innerHTML += `<div class="fav-card">
-                                    <img src="${oneFav.image.url}" alt="">
-                                    <h1>${oneFav.name}</h1>
-                                    <i class="fas fa-heart"></i> 
-                                </div>`
-    })
+        getItems.map((oneFav)=>{
+            favCards.innerHTML += `<div class="fav-card">
+                <img src="${oneFav.image.url}" alt="">
+                <h1>${oneFav.name}</h1>
+                <i onclick="removeFav(${oneFav.id})" style="cursor: pointer" class="fas fa-heart"></i> 
+                </div>`
+            })
+    }
+    
+    getFav();
+
+    // function removeFav(id){
+    //     const getItems = JSON.parse(localStorage.favData);
+    //     // console.log(id);
+    //     const newList = getItems.filter((element) => element.id !== id);
+    //     console.log(newList);
+    //     localStorage.setItem("favList", JSON.stringify(newList));
+    //     getFav();
+    // }
+    
+    
 
 </script>

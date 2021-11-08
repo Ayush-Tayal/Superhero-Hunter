@@ -80,7 +80,8 @@ const favDetails = async (id)=>{
   // console.log(data);
 
   favList.push(data);
-  console.log(favList)
-  let favData = JSON.stringify(favList);
-  localStorage.setItem("favData", favData);
+  // console.log(favList);
+  // let favData = JSON.stringify(favList);
+  alert(`${data.name} added to the Fav list..`);
+  localStorage.setItem("favData", JSON.stringify(favList));
 }

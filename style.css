@@ -201,6 +201,7 @@ body{
     justify-content: space-around;
     overflow: auto;
     margin-top: 8%;
+    
 }
 
 
@@ -213,19 +214,24 @@ body{
     flex-basis: 20%;
     /* flex: 0 0 30.33%; */
     text-align: center;
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
+    /* height: 50vh; */
+    border-radius: 1rem;
     
 }
 
 .fav-card img{
     height: 350px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1rem;
     box-shadow: 0px 5px 15px 2px rgba(0,0,0,1);
     -webkit-box-shadow: 0px 5px 15px 2px rgba(0,0,0,1);
     -moz-box-shadow: 0px 5px 15px 2px rgba(0,0,0,1);    
 }
 
 .fav-card h1{
-    font-size: 3rem;
+    font-size: 2.1rem;
 }
 
 .fav-card i{

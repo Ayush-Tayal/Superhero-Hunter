@@ -52,13 +52,27 @@
 
 <script>
     const details = document.querySelector("#details");
-    // console.log(details);
+    console.log(details);
+    // const heart = document.querySelector(".far");
 
     const getItems = JSON.parse(localStorage.search);
     console.log(getItems);
 
+    let favList = JSON.parse(localStorage.getItem("favList"));
+    console.log(favList);
+
+    let flag = "far fa-heart";
+    
+    favList.map((element)=>{
+        if(element.id === getItems.id){
+            flag="fas fa-heart";
+        } 
+    })
+    
+    
+
     details.innerHTML += `<img src="${getItems.image.url}" alt="">
-                        <i class="far fa-heart"></i>
+                        <i style="cursor: pointer" class="${flag}"></i>
                         
                         <h1 id="name">${getItems.name}</h1>
 

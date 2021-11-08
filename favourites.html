@@ -76,7 +76,7 @@
     // console.log(favCards);
 
     function getFav(){
-        const getItems = JSON.parse(localStorage.favData);
+        const getItems = JSON.parse(localStorage.favList);
         console.log(getItems);
         favCards.innerHTML = "";
 
@@ -91,14 +91,14 @@
     
     getFav();
 
-    // function removeFav(id){
-    //     const getItems = JSON.parse(localStorage.favData);
-    //     // console.log(id);
-    //     const newList = getItems.filter((element) => element.id !== id);
-    //     console.log(newList);
-    //     localStorage.setItem("favList", JSON.stringify(newList));
-    //     getFav();
-    // }
+    function removeFav(id){
+        const getItems = JSON.parse(localStorage.favList);
+        console.log(id);
+        const newList = getItems.filter((element) => element.id != id);
+        console.log("new List",newList);
+        localStorage.setItem("favList", JSON.stringify(newList));
+        getFav();
+    }
     
     
 

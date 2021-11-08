@@ -79,9 +79,32 @@ const favDetails = async (id)=>{
   const data = await response.json();
   // console.log(data);
 
-  favList.push(data);
-  // console.log(favList);
-  // let favData = JSON.stringify(favList);
-  alert(`${data.name} added to the Fav list..`);
-  localStorage.setItem("favData", JSON.stringify(favList));
+
+  let getItems = JSON.parse(localStorage.getItem("favList"));
+  // console.log(getItems);
+
+  let flag = true; // data pada hai fav mai
+
+  if(getItems == undefined || getItems.length == 0){
+    favList.push(data);
+    localStorage.setItem("favList", JSON.stringify(favList));
+  }
+  else{
+    let list = [];
+    
+    getItems.map((element)=>{
+      if(element.id===data.id){
+        flag= false;
+      }
+    })
+
+    if(flag){
+
+      list = [data,...getItems];
+      console.log("92",list); 
+      localStorage.setItem("favList", JSON.stringify(list));
+    }
+  }
+
+
 }

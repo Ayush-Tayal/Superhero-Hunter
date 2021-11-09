@@ -6,7 +6,6 @@ body{
     margin: 0;
     padding: 0;
     background-size: cover;
-    
 }
 
 a{
@@ -15,7 +14,6 @@ a{
 }
 
 /* Navbar */
-
 #heading{
     font-family:'Dancing Script';
     font-size: 2rem;  
@@ -68,8 +66,6 @@ a{
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
-    
-
 }
 
 .main-heading{
@@ -89,12 +85,10 @@ a{
     padding: 1rem;
     border: none;
     outline: none;
-    width: 40rem;
-    
+    width: 40rem;   
 }
 
 /* Seacrh Result */
-
 .search-result{
     height: 60vh;
     overflow: auto;
@@ -144,6 +138,11 @@ a{
 
 .card-details .search{
     background-color: grey;
+    transition: all .2s ease-in-out;
+}
+
+.card-details button:hover{
+    transform: scale(1.1);
 }
 
 .card-details .addToFav{
@@ -234,6 +233,12 @@ i{
     text-align: center;
     padding-top: 1.5rem;
     border-radius: 12px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.fav-card:hover{
+    transform: scale(1.1);
 }
 
 .fav-card h1{
@@ -246,14 +251,8 @@ i{
 
 /* Media Query */
 @media screen and (max-width:768px) {
-
-    body{
-        /* background-size: cover; */
-    }
-
     #navbar{
         width: 100%;
-        /* display: none; */
     }
 
     #left-navbar a{
@@ -333,6 +332,7 @@ i{
     #intelligence, #strength, #power{
         font-size: 1rem;   
     }
+
     /* Favourites */
     .fav-card img{
         height: 200px;

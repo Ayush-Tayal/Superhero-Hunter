@@ -77,6 +77,10 @@ a{
     text-align: center;
 }
 
+#mob-heading{
+    display: none;
+}
+
 #main input{
     font-size: 1.9rem;
     border-radius: 10px;
@@ -176,6 +180,7 @@ i{
     text-align: center;
     width: 100%;
     color: rgb(241, 26, 26);
+    
 }
 
 #name{
@@ -231,4 +236,102 @@ i{
 
 .fav-card h1{
     font-size: 2.5rem;
+}
+
+.fav-card i{
+    margin-bottom: 24px;
+}
+
+/* Media Query */
+@media screen and (max-width:768px) {
+    #navbar{
+        width: 100%;
+        /* display: none; */
+    }
+
+    #left-navbar a{
+        display: none;
+    }
+
+    #right-navbar{
+        display: flex;
+        margin-right: 2.5rem;
+    }
+    
+    .superhero-icon{
+        display: none;
+    }
+
+    /* main */
+    .main-heading{
+        display: none;
+    }
+
+    #mob-heading{
+        display: block;
+        margin-top: 15%;
+        margin-bottom: 7%;
+        font-family:'Dancing Script';
+        font-size: 1.8rem;
+        padding: 10px;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    #main input{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    #input{
+        display: block;
+        margin: auto;
+    }
+
+    /* details */
+    #details{
+        width: 100%;
+        /* padding-left: 10px; */
+        /* margin-right: 0; */
+        padding: 0;
+
+    }
+    #details img{
+        height: 200px;
+        /* display: block; */
+        /* margin-left: auto; */
+        /* margin-right: auto; */
+        /* padding-top: 5%; */
+    }
+    
+    #name{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    #power-stats{
+
+    }
+
+    #intelligence, #strength, #power{
+        font-size: 1rem;   
+    }
+    /* Favourites */
+    .fav-card img{
+        height: 200px;
+    }
+
+    .fav-card h1{
+        font-size: 1.5rem;
+    }
+
+    .fav-card{
+        margin: 40px 0px;
+        padding: 20px;
+    }
+
+    .fav-card i{
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
 }

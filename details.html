@@ -32,12 +32,11 @@
 <script>
     const details = document.querySelector("#details");
     console.log(details);
-    // const heart = document.querySelector(".far");
 
     const getItems = JSON.parse(localStorage.search);
     console.log(getItems);
 
-    let favList = JSON.parse(localStorage.getItem("favList"));
+    let favList = JSON.parse(localStorage.favList);
     console.log(favList);
 
     let flag = "far fa-heart";
@@ -49,7 +48,6 @@
     })
     
     
-
     details.innerHTML += `<img src="${getItems.image.url}" alt="">
                         <i style="cursor: pointer" class="${flag}"></i>
                         
@@ -72,9 +70,8 @@
                             <h4>${getItems.powerstats.power}</h4>
                         </div>`
 
+
 </script>
-
-
 
 
 

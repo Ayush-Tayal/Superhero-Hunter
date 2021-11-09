@@ -27,6 +27,7 @@ async function supereherofunc() {
       <button id=${superhero.id} class="addToFav">Add to Favourites</button>
       </div>
       </ul> `;
+
       })
     : `${(seachResult.innerHTML = " ")}`;
 }
@@ -52,7 +53,6 @@ seachResult.addEventListener("click", (e)=>{
     let id = e.target.id;
     console.log("id from search",id);
     searchDetails(id);
-
   }
 
   else if(e.target.classList.contains("addToFav")) {
@@ -60,6 +60,8 @@ seachResult.addEventListener("click", (e)=>{
     let id = e.target.id;
     // console.log("id from fav",id);
     favDetails(id);
+    input.value = ""
+
   }
 
 })

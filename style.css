@@ -5,6 +5,8 @@ body{
     url(./images/background.jpg);
     margin: 0;
     padding: 0;
+    background-size: cover;
+    
 }
 
 a{
@@ -128,7 +130,7 @@ a{
 
 .card-details h1{
     margin: 0;
-    font-size: 1.5;
+    font-size: 2.1rem;
 }
 
 .card-details button{
@@ -244,6 +246,11 @@ i{
 
 /* Media Query */
 @media screen and (max-width:768px) {
+
+    body{
+        /* background-size: cover; */
+    }
+
     #navbar{
         width: 100%;
         /* display: none; */
@@ -279,38 +286,48 @@ i{
     }
 
     #main input{
-        width: 100%;
+        width: 83%;
         font-size: 0.9rem;
     }
 
     #input{
         display: block;
-        margin: auto;
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    /* search-results */
+    .card{
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .card-details h1{
+        font-size: 1.6rem;
+    }
+
+    .card img{
+        height: 125px;
+        width: 100px;
+    }
+
+    .card-details button{
+        font-size: 1rem;
+        padding: 8px;
     }
 
     /* details */
     #details{
-        width: 100%;
-        /* padding-left: 10px; */
-        /* margin-right: 0; */
-        padding: 0;
-
+        width: 60%;
+        height: 75vh;
     }
     #details img{
         height: 200px;
-        /* display: block; */
-        /* margin-left: auto; */
-        /* margin-right: auto; */
-        /* padding-top: 5%; */
     }
     
     #name{
         font-size: 2rem;
         text-align: center;
-    }
-
-    #power-stats{
-
     }
 
     #intelligence, #strength, #power{
